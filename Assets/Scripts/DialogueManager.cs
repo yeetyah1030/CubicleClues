@@ -6,6 +6,7 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.UI;
 using TMPro;
+using System.Text;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class DialogueManager : MonoBehaviour
     public Button[] choiceBtns;
 
     private Story story;
+
+    // stores convo history
+    private StringBuilder convoHistory = new StringBuilder();
 
     void Start()
     {
@@ -40,7 +44,10 @@ public class DialogueManager : MonoBehaviour
         if (story.canContinue)
         {
             textBox.gameObject.SetActive(true); // visibility = true
-            textBox.text = story.Continue(); // pulls next line of dialogue and discards after
+            //textBox.text = "\n" + story.Continue(); // pulls next line of dialogue and discards after
+            string currentLine = story.Continue();
+            convoHistory.AppendLine(currentLine); // Append the current line to the conversation history
+            textBox.text = convoHistory.ToString(); // Update the text box with the entire conversation history
             showChoices();
         }
         else
@@ -78,6 +85,6 @@ public class DialogueManager : MonoBehaviour
     // when dialogue is finished
     private void finishDialogue()
     {
-        textBox.gameObject.SetActive(false); // visibility = false
+        textBox.gameObject.SetActive(false);
     }
 }
