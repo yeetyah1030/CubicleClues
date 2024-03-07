@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     public TextAsset inkFile;
     public TextMeshProUGUI textBox;
     public Button[] choiceBtns;
+    public TMP_InputField inputField; // input field
 
     private Story story;
 
