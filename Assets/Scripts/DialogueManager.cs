@@ -46,8 +46,8 @@ public class DialogueManager : MonoBehaviour
             textBox.gameObject.SetActive(true); // visibility = true
             //textBox.text = "\n" + story.Continue(); // pulls next line of dialogue and discards after
             string currentLine = story.Continue();
-            convoHistory.AppendLine(currentLine); // Append the current line to the conversation history
-            textBox.text = convoHistory.ToString(); // Update the text box with the entire conversation history
+            convoHistory.AppendLine(currentLine); // Append the current line to the convoHistory
+            textBox.text = convoHistory.ToString(); // Update the text box with the entire convoHistory
             showChoices();
         }
         else
