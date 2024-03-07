@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text;
 using System;
+using System.Reflection;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI textBox;
     public Button[] choiceBtns;
     public TMP_InputField inputField; // input field
+    public TextMeshProUGUI errorBox;
+
+    private int choiceIdx;
+    private bool storyStarted = false;
 
     private Story story;
 
@@ -35,6 +40,10 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
+        if (storyStarted == false)
+        {
+            startStory();
+        }
         // checks if user presses enter key
         if (Input.GetButtonDown("Submit"))
         {
@@ -46,7 +55,7 @@ public class DialogueManager : MonoBehaviour
     private void continueStory()
     {
         // checking if story can cont.
-        if (story.canContinue)
+        if (story.canContinue && compareText(choiceIdx)==true)
         {
             textBox.gameObject.SetActive(true); // visibility = true
             //textBox.text = "\n" + story.Continue(); // pulls next line of dialogue and discards after
@@ -84,6 +93,7 @@ public class DialogueManager : MonoBehaviour
     public void setDecision(int choiceIndex)
     {
         story.ChooseChoiceIndex(choiceIndex);
+        choiceIdx = choiceIndex;
         continueStory();
     }
 
@@ -91,5 +101,41 @@ public class DialogueManager : MonoBehaviour
     private void finishDialogue()
     {
         textBox.gameObject.SetActive(false);
+    }
+
+    private bool compareText(int choiceIdx)
+    {
+        if (inputField.GetComponent<TMP_InputField>().text == choiceBtns[choiceIdx].GetComponentInChildren<TextMeshProUGUI>().text && Input.GetKeyDown(KeyCode.Return))
+        {
+            inputField.GetComponent<TMP_InputField>().text = null;
+            choiceIdx = 999;
+            return true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Return))
+        {
+            errorBox.GetComponent<TextMeshProUGUI>().text = "Your message doesn't match the text to type... Try again.";
+            return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void startStory()
+    {
+        if (storyStarted == false)
+        {
+            if (story.canContinue)
+            {
+                textBox.gameObject.SetActive(true); // visibility = true
+                                                    //textBox.text = "\n" + story.Continue(); // pulls next line of dialogue and discards after
+                string currentLine = story.Continue();
+                convoHistory.AppendLine(currentLine); // Append the current line to the convoHistory
+                textBox.text = convoHistory.ToString(); // Update the text box with the entire convoHistory
+                showChoices();
+            }
+            storyStarted = true;
+        }
     }
 }
