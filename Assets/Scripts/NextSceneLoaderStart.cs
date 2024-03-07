@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextSceneLoader : MonoBehaviour
+public class NextSceneLoaderStart : MonoBehaviour
 {
     // Start is called before the first frame update
     private void OnEnable()
     {
-        SceneManager.LoadScene("Start Screen", LoadSceneMode.Single);
+        SceneManager.LoadScene("dialogue_and_choices", LoadSceneMode.Single);
     }
 }

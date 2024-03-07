@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 1665748175}
   - component: {fileID: 1665748176}
   m_Layer: 0
-  m_Name: NextSceneLoader
+  m_Name: NextSceneLoaderIntro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
