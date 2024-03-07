@@ -7,6 +7,7 @@ using Ink.Runtime;
 using UnityEngine.UI;
 using TMPro;
 using System.Text;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -20,10 +21,13 @@ public class DialogueManager : MonoBehaviour
     // stores convo history
     private StringBuilder convoHistory = new StringBuilder();
 
+
     void Start()
     {
         // importing ink file as a new story
         story = new Story(inkFile.text);
+        continueStory();
+        showChoices();
 
     }
 
