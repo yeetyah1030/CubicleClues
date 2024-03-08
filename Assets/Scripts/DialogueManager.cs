@@ -97,3 +97,5 @@ public class DialogueManager : MonoBehaviour
         textBox.gameObject.SetActive(true);
     }
 }
+
+// test test
