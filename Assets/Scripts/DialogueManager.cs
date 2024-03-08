@@ -22,6 +22,9 @@ public class DialogueManager : MonoBehaviour
     // stores convo history
     private StringBuilder convoHistory = new StringBuilder();
 
+    // stores if choiceBtn was clicked
+    private bool choiceButtonPressed = false;
+
 
     void Start()
     {
@@ -46,7 +49,7 @@ public class DialogueManager : MonoBehaviour
     private void continueStory()
     {
         // checking if story can cont.
-        if (story.canContinue)
+        while (story.canContinue)
         {
             textBox.gameObject.SetActive(true); // visibility = true
             //textBox.text = "\n" + story.Continue(); // pulls next line of dialogue and discards after
@@ -55,7 +58,7 @@ public class DialogueManager : MonoBehaviour
             textBox.text = convoHistory.ToString(); // Update the text box with the entire convoHistory
             showChoices();
         }
-        else
+        if (!story.canContinue)
         {
             finishDialogue();
         }
@@ -90,6 +93,9 @@ public class DialogueManager : MonoBehaviour
     // when dialogue is finished
     private void finishDialogue()
     {
-        textBox.gameObject.SetActive(false);
+        // broken logic here but makes program work... fix later
+        textBox.gameObject.SetActive(true);
     }
 }
+
+// test test
