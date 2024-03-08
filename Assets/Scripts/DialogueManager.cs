@@ -7,6 +7,7 @@ using Ink.Runtime;
 using UnityEngine.UI;
 using TMPro;
 using System.Text;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -14,16 +15,20 @@ public class DialogueManager : MonoBehaviour
     public TextAsset inkFile;
     public TextMeshProUGUI textBox;
     public Button[] choiceBtns;
+    public TMP_InputField inputField; // input field
 
     private Story story;
 
     // stores convo history
     private StringBuilder convoHistory = new StringBuilder();
 
+
     void Start()
     {
         // importing ink file as a new story
         story = new Story(inkFile.text);
+        continueStory();
+        showChoices();
 
     }
 
@@ -46,8 +51,8 @@ public class DialogueManager : MonoBehaviour
             textBox.gameObject.SetActive(true); // visibility = true
             //textBox.text = "\n" + story.Continue(); // pulls next line of dialogue and discards after
             string currentLine = story.Continue();
-            convoHistory.AppendLine(currentLine); // Append the current line to the conversation history
-            textBox.text = convoHistory.ToString(); // Update the text box with the entire conversation history
+            convoHistory.AppendLine(currentLine); // Append the current line to the convoHistory
+            textBox.text = convoHistory.ToString(); // Update the text box with the entire convoHistory
             showChoices();
         }
         else
