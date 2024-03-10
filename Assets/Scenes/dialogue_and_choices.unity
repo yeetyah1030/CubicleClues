@@ -1972,7 +1972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f79683f77223e84da5844e29002dd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: d18f5bdd29f09b646a20bafefb081a4e, type: 3}
+  inkFile: {fileID: 4900000, guid: c0709382008ec4fd8a983b0298b3206c, type: 3}
   textBox: {fileID: 69875769}
   choiceBtns:
   - {fileID: 98621998}
@@ -2646,7 +2646,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 447.2441}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
