@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI textBox;
     public Button[] choiceBtns;
     public TMP_InputField inputField; // input field
+    public AutoScroll autoScroll;
+    public RectTransform contentRectTransform;
 
     private Story story;
 
@@ -45,6 +47,16 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    // adjusting content size
+    private void adjustContentSize()
+    {
+        // getting prefered height of content txt box
+        float contentHeight = textBox.preferredHeight;
+
+        // update rectTransform to fit
+        contentRectTransform.sizeDelta = new Vector2(contentRectTransform.sizeDelta.x, contentHeight);
+    }
+
     // continueStory func
     private void continueStory()
     {
@@ -52,10 +64,11 @@ public class DialogueManager : MonoBehaviour
         while (story.canContinue)
         {
             textBox.gameObject.SetActive(true); // visibility = true
-            //textBox.text = "\n" + story.Continue(); // pulls next line of dialogue and discards after
             string currentLine = story.Continue();
             convoHistory.AppendLine(currentLine); // Append the current line to the convoHistory
             textBox.text = convoHistory.ToString(); // Update the text box with the entire convoHistory
+            //adjustContentSize();
+            autoScroll.ScrollToBottom(); // calling autoScroll function
             showChoices();
         }
         if (!story.canContinue)
