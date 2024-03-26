@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dialogue_and_choices.unity
     guid: 7de861c348bb1bc4bb70034df2e676b2
+  - enabled: 1
+    path: Assets/Scenes/ending_fail.unity
+    guid: 493d667f6c43c4f218c12f7c23f72d6a
   m_configObjects: {}
