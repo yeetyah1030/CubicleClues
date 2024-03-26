@@ -8,16 +8,18 @@ using UnityEngine.UI;
 using TMPro;
 using System.Text;
 using System;
+using UnityEngine.UIElements;
 
 public class DialogueManager : MonoBehaviour
 {
     // referencing ink file
     public TextAsset inkFile;
     public TextMeshProUGUI textBox;
-    public Button[] choiceBtns;
+    public UnityEngine.UI.Button[] choiceBtns;
     public TMP_InputField inputField; // input field
     public AutoScroll autoScroll;
     public RectTransform contentRectTransform;
+    public ScrollRect scrollView;
 
     private Story story;
 
@@ -54,7 +56,9 @@ public class DialogueManager : MonoBehaviour
         float contentHeight = textBox.preferredHeight;
 
         // update rectTransform to fit
-        contentRectTransform.sizeDelta = new Vector2(contentRectTransform.sizeDelta.x, contentHeight);
+        Vector2 sizeDelta = contentRectTransform.sizeDelta;
+        sizeDelta.y = contentHeight;
+        contentRectTransform.sizeDelta = sizeDelta;
     }
 
     // continueStory func
@@ -67,8 +71,11 @@ public class DialogueManager : MonoBehaviour
             string currentLine = story.Continue();
             convoHistory.AppendLine(currentLine); // Append the current line to the convoHistory
             textBox.text = convoHistory.ToString(); // Update the text box with the entire convoHistory
-            //adjustContentSize();
-            autoScroll.ScrollToBottom(); // calling autoScroll function
+
+            // scroll to bottom
+            Canvas.ForceUpdateCanvases();
+            scrollView.verticalNormalizedPosition = 0f;
+
             showChoices();
         }
         if (!story.canContinue)
