@@ -260,13 +260,13 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.054901965, g: 0.16470589, b: 0.3019608, a: 1}
-    m_HighlightedColor: {r: 0.6509434, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 0.14509805, g: 0.21960786, b: 0.3372549, a: 1}
+    m_HighlightedColor: {r: 0.6784314, g: 0.18823531, b: 0.19215688, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 5
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.3
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -654,7 +654,7 @@ MonoBehaviour:
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 5
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.3
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -767,7 +767,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 54, y: 161}
+  m_AnchoredPosition: {x: 66, y: 155}
   m_SizeDelta: {x: 465.669, y: 46.0544}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &788160496
@@ -790,7 +790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Who is the real killer of Christopher Cook?
+  m_text: Who is the real killer?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1a7ff028e69a4543810c95625826144, type: 2}
   m_sharedMaterial: {fileID: 6814701008328946306, guid: f1a7ff028e69a4543810c95625826144, type: 2}
@@ -824,7 +824,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -1052,7 +1052,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6413f15ba09af4039bca31060d657e63, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1264,8 +1264,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 127.50001, y: -30.93602}
-  m_SizeDelta: {x: 145.19, y: 208.19}
+  m_AnchoredPosition: {x: 131.66505, y: -30.93602}
+  m_SizeDelta: {x: 141.81, y: 208.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1561937438
 MonoBehaviour:
@@ -1294,7 +1294,7 @@ MonoBehaviour:
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 5
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.3
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -1629,7 +1629,7 @@ MonoBehaviour:
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 5
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.3
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -1819,10 +1819,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1575754610}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7905884, y: 0.5935974}
-  m_SizeDelta: {x: 26.89978, y: 14.735809}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.7906, y: 0.5936}
+  m_SizeDelta: {x: 826.8998, y: 462.7358}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049980615
 MonoBehaviour:
