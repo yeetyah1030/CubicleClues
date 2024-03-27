@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class NextSceneEndingFail : MonoBehaviour
 {
-    private void OnEnable()
+    public void MoveToScene(int sceneID)
     {
-        SceneManager.LoadScene("ending_fail", LoadSceneMode.Single);
+        SceneManager.LoadScene(sceneID);
     }
 }
 

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NextScene : MonoBehaviour
+public class NextSceneEndingSuccess : MonoBehaviour
 {
-    private void OnEnable()
+    public void MoveToScene(int sceneID)
     {
-        SceneManager.LoadScene("ending_success", LoadSceneMode.Single);
+        SceneManager.LoadScene(sceneID);
     }
 }
