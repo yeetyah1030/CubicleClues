@@ -69,6 +69,14 @@ public class DialogueManager : MonoBehaviour
         {
             textBox.gameObject.SetActive(true); // visibility = true
             string currentLine = story.Continue();
+
+            // when tag is detected, change text colour to dark blue
+            List<string> tags = story.currentTags;
+            if (tags.Count > 0)
+            {
+                currentLine = "<color=#00008b>" + currentLine + "</color>";
+            }
+
             convoHistory.AppendLine(currentLine); // Append the current line to the convoHistory
             textBox.text = convoHistory.ToString(); // Update the text box with the entire convoHistory
 

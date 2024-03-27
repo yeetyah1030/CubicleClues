@@ -1951,7 +1951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f79683f77223e84da5844e29002dd24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: c0709382008ec4fd8a983b0298b3206c, type: 3}
+  inkFile: {fileID: 4900000, guid: 8be47640f4d60ec49add65420f841471, type: 3}
   textBox: {fileID: 665440494}
   choiceBtns:
   - {fileID: 98621998}
