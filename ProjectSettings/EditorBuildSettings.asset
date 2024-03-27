@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ending_success.unity
     guid: 76932607c699d4fd9af2cfd58b6ec415
+  - enabled: 1
+    path: Assets/Scenes/decision.unity
+    guid: 9d5ad75e026a6b8438c2075af01fe448
   m_configObjects: {}
